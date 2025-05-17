@@ -8,7 +8,7 @@ export interface IRobot extends Document {
 
 const RobotSchema = new Schema<IRobot>({
   name: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
+  email: { type: String, required: true },
   empresa: { type: String, required: true }
 }, {
   timestamps: true
