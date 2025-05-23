@@ -5,6 +5,7 @@ import { CreateRobotDTO, UpdateRobotDTO } from '../dtos/robot.dto';
 export const createRobot = async (req: Request, res: Response): Promise<void> => {
   try {
     const dto: CreateRobotDTO = req.body;
+    console.log('DTO recibido:', dto); 
     const robot = new RobotModel(dto);
     await robot.save();
     res.status(201).json(robot);

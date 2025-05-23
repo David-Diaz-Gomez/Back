@@ -10,7 +10,7 @@ const app = express();
 //    En desarrollo puedes usar '*' para permitir cualquier origen.
 //    En producción restringe a tu frontend real (por ejemplo, process.env.FRONTEND_URL).
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173' ,
+  origin: '*' ,
   methods: ['GET','POST','PATCH','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization']
 }));

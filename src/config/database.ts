@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
 import 'dotenv/config';  // carga automáticamente las variables de .env
 
-const uri = process.env.MONGODB_URI;
+const env = process.env.NODE_ENV;
+const uri =
+  env === 'production'
+    ? process.env.MONGODB_URI_PROD
+    : process.env.MONGODB_URI_LOCAL;
 if (!uri) {
   console.error('❌ MONGODB_URI no está definida en .env');
   process.exit(1);
